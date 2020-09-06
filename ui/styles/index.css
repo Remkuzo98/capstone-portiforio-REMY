@@ -7,10 +7,11 @@
 }
 body {
     font-family: 'Poppins', sans-serif;
+    
 }
 .wrapper {
     background-color: #017AFF;
-    width: 75%;
+    width: 65%;
     height: 600px;
     display: flex;
     justify-content: space-between;
@@ -24,6 +25,8 @@ a{
 }
 a:hover {
     text-decoration: underline;
+    
+    
 }
 .menu li{
     
@@ -55,7 +58,7 @@ a:hover {
 }
 .imgLogo{
     margin-top: 1em;
-    margin-left: -40em;
+    margin-left: -35em;
 }
 .buttonGet {
     color: white;
