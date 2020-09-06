@@ -30,8 +30,8 @@ a:hover {
 }
 .menu li{
     
-    padding: 18px 1px;
-    font-size: 1.3em;
+    padding: 18px 1.1px;
+    font-size: 1.3.1em;
 }
 .menu {
     display: flex;
