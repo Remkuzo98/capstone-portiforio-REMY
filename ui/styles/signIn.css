@@ -94,7 +94,7 @@ hr {
 }
 #register:hover {
     
-    color:  #4000f1;
+    color:  #1e4eb4;
     background-color: rgba(0, 128, 128, 0.3);
 }
 
@@ -123,6 +123,7 @@ span {
     margin-bottom: .5rem;
     padding: 0rem .3rem;
     position: relative;
+    
 
 }
 #span1, #span2 {
