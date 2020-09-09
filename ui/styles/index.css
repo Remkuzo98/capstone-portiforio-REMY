@@ -33,6 +33,10 @@ a:hover {
     padding: 18px 1.1px;
     font-size: 1.3.1em;
 }
+.menu li a:hover{
+    background-color: #074a92;
+    
+}
 .menu {
     display: flex;
     flex-wrap: wrap;
