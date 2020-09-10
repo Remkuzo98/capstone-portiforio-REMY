@@ -89,6 +89,7 @@ margin-left: -225px;
   
 
 }
+ 
 footer {
     display: flex;
     flex-direction: row;
@@ -106,4 +107,9 @@ footer {
 }
 span {
     margin-left: 0.5rem;
+}
+.social p span a {
+    margin-left: 2em;
+    border: 1px solid gray;
+    padding: .1rem .4rem;
 }
