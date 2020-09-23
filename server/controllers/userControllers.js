@@ -1,29 +1,29 @@
 import User from '../models/user'
 export default new class userControllers {
-    async getAll(req, res) {
+
+    async save(req, res){
         try {
-            const user = await User.find({});
-            if(user){
+            const user = new User(req.body);
+            const savedUser = await user.save();
+            if(savedUser){
                 return res.status(200).send({
-                    message: "new Data is Here",
-                    data : {
-                        user:user
-                    }
+                    message:"Data saved Success",
+                    data:savedUser
                 })
             }
             else
             {
                 return res.status(400).send({
-                    message: "Data not Found"
+                    error:"Data Not Saved!!"
                 })
             }
-            
         } catch (error) {
             return res.status(500).send({
-                error: error.message
+                error:error.message
             })
         }
         
     }
+
    
 }
