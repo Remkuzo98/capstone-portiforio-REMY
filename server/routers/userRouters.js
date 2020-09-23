@@ -5,7 +5,7 @@ const userRouters = express.Router();
 
 
 
-userRouters.delete('/users/:id',userControllers.delete)
+userRouters.get('/users/:id',userControllers.getbyId)
 
 
 export default userRouters
