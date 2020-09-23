@@ -4,7 +4,8 @@ import userControllers from "../controllers/userControllers";
 const userRouters = express.Router();
 
 
-userRouters.get('/users', userControllers.getAll);
+
+userRouters.post('/users', userControllers.save);
 
 
 export default userRouters
