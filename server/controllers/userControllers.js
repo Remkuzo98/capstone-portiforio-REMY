@@ -1,27 +1,25 @@
 import User from '../models/user'
 export default new class userControllers {
 
-    async save(req, res){
+    async delete(req, res){
         try {
-            const user = new User(req.body);
-            const savedUser = await user.save();
-            if(savedUser){
-                return res.status(200).send({
-                    message:"Data saved Success",
-                    data:savedUser
-                })
-            }
-            else
-            {
+            const user = User.findOne({_id:req.params.id});
+            if(!user){
                 return res.status(400).send({
-                    error:"Data Not Saved!!"
+                    message:"user not Found"
                 })
             }
+            await user.remove();
+            return res.status(400).send({
+                message:"User removed "
+            })
+
         } catch (error) {
             return res.status(500).send({
                 error:error.message
             })
         }
+    
         
     }
 
