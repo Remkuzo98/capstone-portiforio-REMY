@@ -1,9 +1,9 @@
-import Comment from '../models/comment'
-export default new class commentControllers {
+import Contacts from '../models/contacts'
+export default new class contactsControllers {
     async getAll(req, res) {
         try {
-            const comment = await Comment.find({});
-            if(comment){
+            const contacts = await Contacts.find({});
+            if(contacts){
                 return res.status(200).send({
                     message: "new Data is Here",
                     data : {
