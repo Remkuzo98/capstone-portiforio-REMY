@@ -1,6 +1,6 @@
 import mongoose,{Schema} from 'mongoose'
 
-const CommentSchema = new Schema({
+const ContactsSchema = new Schema({
     
     body:{
         type:String,
@@ -10,5 +10,5 @@ const CommentSchema = new Schema({
 },{timestamps:true})
 
 
-const Comment = mongoose.model('Comment',CommentSchema);
-export default Comment;
+const Contacts = mongoose.model('Contacts',ContactsSchema);
+export default Contacts;
