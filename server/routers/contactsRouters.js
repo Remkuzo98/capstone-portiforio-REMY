@@ -5,7 +5,7 @@ const contactsRouters = express.Router();
 
 
 
-contactsRouters.get('/contacts', contactsControllers.getAll);
+contactsRouters.post('/contacts', contactsControllers.save);
 
 
 export default contactsRouters
