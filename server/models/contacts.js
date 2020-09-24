@@ -1,6 +1,10 @@
 import mongoose,{Schema} from 'mongoose'
 
 const ContactsSchema = new Schema({
+    fullname:{
+        type:String,
+        required:true
+    },
     
     body:{
         type:String,

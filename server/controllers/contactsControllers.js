@@ -1,14 +1,13 @@
 import Contacts from '../models/contacts'
 export default new class contactsControllers {
-    async getAll(req, res) {
+    async save(req, res) {
         try {
-            const contacts = await Contacts.find({});
-            if(contacts){
+            const contacts = new Contacts(req.body);
+            const savedcontacts = await contacts.save({});
+            if(savedcontacts){
                 return res.status(200).send({
-                    message: "new Data is Here",
-                    data : {
-                        comment: comment
-                    }
+                    message:"message saved Successifully",
+                    data:savedcontacts
                 })
             }
             else
