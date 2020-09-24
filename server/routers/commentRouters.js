@@ -5,7 +5,7 @@ const commentRouters = express.Router();
 
 
 
-commentRouters.post('/comments', commentControllers.save);
+commentRouters.get('/comments/:id', commentControllers.getAll);
 
 
 export default commentRouters
