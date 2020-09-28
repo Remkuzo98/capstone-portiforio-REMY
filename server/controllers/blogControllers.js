@@ -12,7 +12,7 @@ export default new class blogControllers {
             }
             else
             {
-                return res.status(400).send({
+                return res.status(404).send({
                     message: 'Blog not Found'
                 })
             }
