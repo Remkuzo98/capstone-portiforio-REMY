@@ -5,7 +5,7 @@ const blogRouters = express.Router();
 
 
 
-blogRouters.get('/blogs/:id',blogControllers.getbyId)
+blogRouters.get('/api/blogs/:id',blogControllers.getbyId)
 
 
 export default blogRouters
