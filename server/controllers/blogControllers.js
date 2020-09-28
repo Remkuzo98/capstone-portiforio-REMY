@@ -6,13 +6,13 @@ export default new class blogControllers {
             const savedBlog = await blog.save();
             if(savedBlog){
                 return res.status(200).send({
-                    message:"blog saved Successifully",
+                    message:"Blog saved successfully",
                     data:savedBlog
                 })
             }
             else
             {
-                return res.status(400).send({
+                return res.status(404).send({
                     error:"Blog Not Saved!!"
                 })
             }
