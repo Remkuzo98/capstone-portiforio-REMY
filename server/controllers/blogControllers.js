@@ -4,12 +4,12 @@ export default new class blogControllers {
         try {
             const blog = Blog.findOne({_id:req.params.id});
             if(!blog){
-                return res.status(400).send({
+                return res.status(404).send({
                     message:"Blog not Found"
                 })
             }
             await blog.remove();
-            return res.status(400).send({
+            return res.status(200).send({
                 message:"Blog removed "
             })
 
