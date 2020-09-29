@@ -3,7 +3,7 @@ export default new class userControllers {
 
     async update(req, res){
         const user = await User.findById({_id:req.params.id})
-        const AllowedUpdates = ['fullname','username','email']
+        const AllowedUpdates = ['fullname','username','email','password']
         const updates = Object.keys(req.body)
         const isValidOperation = updates.every((update) => AllowedUpdates.includes(update))
         if(!isValidOperation){
