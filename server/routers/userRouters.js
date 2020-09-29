@@ -5,7 +5,7 @@ const userRouters = express.Router();
 
 
 
-userRouters.get('/users/:id',userControllers.getbyId)
+userRouters.get('/api/users/:id',userControllers.getbyId)
 
 
 export default userRouters
