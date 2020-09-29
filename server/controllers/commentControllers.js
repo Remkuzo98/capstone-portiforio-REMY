@@ -13,7 +13,7 @@ export default new class commentControllers {
             }
             else
             {
-                return res.status(400).send({
+                return res.status(404).send({
                     message: "Data not Found"
                 })
             }
