@@ -6,13 +6,13 @@ export default new class commentControllers {
             const savedComment = await comment.save();
             if(savedComment){
                 return res.status(200).send({
-                    message:"Data saved Successifully",
+                    message:"comment has been sent",
                     data:savedComment
                 })
             }
             else
             {
-                return res.status(400).send({
+                return res.status(404).send({
                     error:"Data Not Saved!!"
                 })
             }
