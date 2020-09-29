@@ -6,13 +6,13 @@ export default new class contactsControllers {
             const savedcontacts = await contacts.save({});
             if(savedcontacts){
                 return res.status(200).send({
-                    message:"message saved Successifully",
+                    message:"message saved successifully",
                     data:savedcontacts
                 })
             }
             else
             {
-                return res.status(400).send({
+                return res.status(404).send({
                     message: "Data not Found"
                 })
             }
