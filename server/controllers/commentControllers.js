@@ -1,5 +1,6 @@
 import Comment from '../models/comment'
 export default new class commentControllers {
+
     async save(req, res){
         try {
             const comment = new Comment(req.body);
@@ -8,11 +9,13 @@ export default new class commentControllers {
                 return res.status(200).send({
                     message:"comment has been sent",
                     data:savedComment
+
                 })
             }
             else
             {
                 return res.status(404).send({
+
                     error:"Data Not Saved!!"
                 })
             }
@@ -23,6 +26,7 @@ export default new class commentControllers {
         }
         
     }
+
 
 }
 
