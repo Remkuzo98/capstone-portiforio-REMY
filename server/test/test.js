@@ -7,11 +7,12 @@ import index from '../../index';
  describe('users', () => {
    
 
-    describe('save a message', () => {
+    describe('get a comment', () => {
        
-        it('should save a message',(done) => {
+        it('should save a comment from users on a blog',(done) => {
             chai.request(index)
-            .post('/api/contacts')
+            .post('/api/comments')
+
 
     
             .end((err, res) => {
