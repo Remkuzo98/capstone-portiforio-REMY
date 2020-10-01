@@ -1,10 +1,12 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import index from '../../index';
+
  chai.should();
  chai.use(chaiHttp);
 
  describe('users', () => {
+
    
     describe('delete a user', () => {
        
@@ -14,6 +16,7 @@ import index from '../../index';
             .end((err, res) => {
              res.should.have.status(200);
              res.body.should.be.a('object')
+
              done();
             })
          
@@ -22,4 +25,6 @@ import index from '../../index';
     })
 
 
+
  })
+

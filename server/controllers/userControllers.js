@@ -1,5 +1,8 @@
-import User from '../models/user'
+import User from '../models/user';
+import bcrpty from 'bcrypt';
+import jwt from 'jsonwebtoken';
 export default new class userControllers {
+
 
     async delete(req, res){
         try {
@@ -7,8 +10,12 @@ export default new class userControllers {
             if(!user){
                 return res.status(404).send({
                     message:"user not Found"
+
+   
                 })
+
             }
+
             await user.remove();
             return res.status(200).send({
                 message:"User removed "
@@ -20,7 +27,7 @@ export default new class userControllers {
             })
         }
     
-        
+
     }
 
    
