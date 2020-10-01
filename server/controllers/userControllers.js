@@ -1,21 +1,35 @@
-import User from '../models/user'
+import User from '../models/user';
+import bcrpty from 'bcrypt';
+import jwt from 'jsonwebtoken';
 export default new class userControllers {
 
 
-    async getbyId(req, res){
+    async save(req, res){
         try {
-            const user = await User.findOne({_id:req.params.id});
-            if(user){
+            const user = new User(req.body);
+            const savedUser = await user.save();
+            if(savedUser){
+                let token = jwt.sign({
+                    username: savedUser.username,
+                    email: savedUser.email,
+                    userId : savedUser._id
+                }, process.env.jwtKey, { expiresIn: "1h" }
+                );
+                
                 return res.status(200).send({
-                    message: 'User Found',
-                    data: {
-                        user
-                    }})
+                    message:" saved Successifully",
+                    data:savedUser,
+                    token: token
+
+                })
+
             }
             else
             {
                 return res.status(404).send({
-                    message: 'User not Found'
+
+                    error:"Data Not Saved!!"
+
                 })
             }
         } catch (error) {
@@ -25,5 +39,6 @@ export default new class userControllers {
             })
         }
     }
+
    
 }

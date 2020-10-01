@@ -7,17 +7,14 @@ import index from '../../index';
  describe('users', () => {
    
 
-    describe('Get a user by Id', () => {
+    describe('save a user', () => {
        
-        it('should get a user by Id',(done) => {
+        it('should save a user',(done) => {
             chai.request(index)
-            .get('/api/users/:id')
+            .post('/api/users')
             .end((err, res) => {
              res.should.have.status(200);
-             res.body.should.have.property('fullname');
-             res.body.should.have.property('username');
-             res.body.should.have.property('email');
-             res.body.should.have.property('password');
+             res.should.have.lengthOf(3);
 
              done();
             })
@@ -27,4 +24,6 @@ import index from '../../index';
     })
 
 
+
+ })
 
