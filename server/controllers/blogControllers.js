@@ -1,5 +1,6 @@
 import Blog from '../models/blog'
 export default new class blogControllers {
+
     async update(req, res){
         const blog = await Blog.findById({_id:req.params.id})
         const AllowedUpdates = ['tittle','date','body']
@@ -31,5 +32,6 @@ export default new class blogControllers {
     }
     
 }
+
 
 
