@@ -6,11 +6,13 @@ import index from '../../index';
 
  describe('users', () => {
    
+
     describe('get a blog', () => {
        
         it('should get a single blog',(done) => {
             chai.request(index)
             .get('/api/blogs/:id')
+
             .end((err, res) => {
              res.should.have.status(200);
              done();
