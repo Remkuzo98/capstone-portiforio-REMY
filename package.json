@@ -25,7 +25,10 @@
   "devDependencies": {},
   "scripts": {
     "dev": "nodemon --exec babel-node index.js",
+
     "test":"mocha --timeout 60000 --require @babel/register server/test/test.js" 
+
+   
   },
   "repository": {
     "type": "git",
