@@ -1,20 +1,21 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import index from '../../index';
+
  chai.should();
  chai.use(chaiHttp);
 
  describe('users', () => {
-   
 
-    describe('save a user', () => {
+   // get all users
+    describe('get all users', () => {
        
-        it('should save a user',(done) => {
+        it('should get all users',(done) => {
             chai.request(index)
-            .post('/api/users')
+            .get('/api/users')
             .end((err, res) => {
              res.should.have.status(200);
-             res.should.have.lengthOf(3);
+             
 
              done();
             })

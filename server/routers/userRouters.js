@@ -6,8 +6,7 @@ const userRouters = express.Router();
 
 
 
-
-userRouters.post('/api/users', userControllers.save);
+userRouters.get('/api/users', userControllers.getAll);
 
 
 export default userRouters
