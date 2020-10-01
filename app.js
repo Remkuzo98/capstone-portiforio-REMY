@@ -1,6 +1,8 @@
 import express from 'express';
 
-import commentRouters from "./server/routers/contactsRouters";
+import blogRouters from "./server/routers/blogRouters";
+
+
 
 
 
@@ -10,7 +12,8 @@ const app = express();
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
 
-app.use(commentRouters)
+
+app.use(blogRouters)
 
 
 
