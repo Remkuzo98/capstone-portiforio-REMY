@@ -7,11 +7,11 @@ import index from '../../index';
  describe('users', () => {
    
 
-    describe('update a blog', () => {
+    describe('get a blog', () => {
        
-        it('should update a blog',(done) => {
+        it('should get a single blog',(done) => {
             chai.request(index)
-            .put('/api/blogs/:id')
+            .get('/api/blogs/:id')
 
             .end((err, res) => {
              res.should.have.status(200);
