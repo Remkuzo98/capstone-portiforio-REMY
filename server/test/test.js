@@ -6,6 +6,7 @@ import index from '../../index';
  chai.use(chaiHttp);
 
  describe('users', () => {
+
    // get all users
     describe('get all users', () => {
        
@@ -15,6 +16,7 @@ import index from '../../index';
             .end((err, res) => {
              res.should.have.status(200);
              
+
              done();
             })
          
@@ -23,4 +25,6 @@ import index from '../../index';
     })
 
 
+
  })
+
