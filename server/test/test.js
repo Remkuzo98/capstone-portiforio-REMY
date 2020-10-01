@@ -6,6 +6,7 @@ import index from '../../index';
 
  describe('users', () => {
    
+
     describe('save a user', () => {
        
         it('should save a user',(done) => {
@@ -14,12 +15,14 @@ import index from '../../index';
             .end((err, res) => {
              res.should.have.status(200);
              res.should.have.lengthOf(3);
+
              done();
             })
          
         })
 
     })
+
 
 
  })

@@ -3,6 +3,7 @@ import bcrpty from 'bcrypt';
 import jwt from 'jsonwebtoken';
 export default new class userControllers {
 
+
     async save(req, res){
         try {
             const user = new User(req.body);
@@ -21,19 +22,22 @@ export default new class userControllers {
                     token: token
 
                 })
+
             }
             else
             {
                 return res.status(404).send({
+
                     error:"Data Not Saved!!"
+
                 })
             }
         } catch (error) {
             return res.status(500).send({
                 error:error.message
+
             })
         }
-        
     }
 
    
