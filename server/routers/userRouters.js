@@ -1,5 +1,5 @@
 import express from 'express';
-import checkAuth from '../moddlewares/checkAuth';
+import checkAuth from '../middlewares/checkAuth';
 import userControllers from "../controllers/userControllers";
 
 const userRouters = express.Router();
