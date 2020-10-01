@@ -9,7 +9,10 @@ const autho = (req, res, next) => {
       if(decoded){
           next();
       }else {
-          return res.status(401).send({
+
+
+          return res.status(404).send({
+
             message:"authethication failed",
 
             })

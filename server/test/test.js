@@ -6,11 +6,13 @@ import index from '../../index';
 
  describe('users', () => {
    
+
     describe('delete a blog', () => {
        
         it('should delete a blog',(done) => {
             chai.request(index)
             .delete('/api/bglogs/:id')
+
             .end((err, res) => {
              res.should.have.status(200);
              done();
