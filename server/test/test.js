@@ -6,13 +6,19 @@ import index from '../../index';
 
  describe('users', () => {
    
-    describe('update a user', () => {
+
+    describe('Get a user by Id', () => {
        
-        it('should update a user',(done) => {
+        it('should get a user by Id',(done) => {
             chai.request(index)
-            .put('/api/users/:id')
+            .get('/api/users/:id')
             .end((err, res) => {
              res.should.have.status(200);
+             res.body.should.have.property('fullname');
+             res.body.should.have.property('username');
+             res.body.should.have.property('email');
+             res.body.should.have.property('password');
+
              done();
             })
          
@@ -21,4 +27,4 @@ import index from '../../index';
     })
 
 
- })
+

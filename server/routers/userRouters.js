@@ -6,7 +6,10 @@ const userRouters = express.Router();
 
 
 
-userRouters.put('/api/users/:id',checkAuth,userControllers.update)
+
+userRouters.get('/api/users/:id',userControllers.getbyId)
+
+
 
 
 export default userRouters
