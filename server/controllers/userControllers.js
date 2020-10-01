@@ -1,29 +1,34 @@
-import User from '../models/user'
+import User from '../models/user';
+import bcrpty from 'bcrypt';
+import jwt from 'jsonwebtoken';
 export default new class userControllers {
-    async getAll(req, res) {
+
+
+    async delete(req, res){
         try {
-            const user = await User.find({});
-            if(user){
-                return res.status(200).send({
-                    message: "new Data is Here",
-                    data : {
-                        user:user
-                    }
+            const user = User.findOne({_id:req.params.id});
+            if(!user){
+                return res.status(404).send({
+                    message:"user not Found"
+
+   
                 })
+
             }
-            else
-            {
-                return res.status(400).send({
-                    message: "Data not Found"
-                })
-            }
-            
+
+            await user.remove();
+            return res.status(200).send({
+                message:"User removed "
+            })
+
         } catch (error) {
             return res.status(500).send({
-                error: error.message
+                error:error.message
             })
         }
-        
+    
+
     }
+
    
 }
