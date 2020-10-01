@@ -1,19 +1,19 @@
-import User from '../models/user'
-export default new class userControllers {
+import Comment from '../models/comment'
+export default new class commentControllers {
     async getAll(req, res) {
         try {
-            const user = await User.find({});
-            if(user){
+            const comment = await Comment.find({});
+            if(comment){
                 return res.status(200).send({
                     message: "new Data is Here",
                     data : {
-                        user:user
+                        comment: comment
                     }
                 })
             }
             else
             {
-                return res.status(400).send({
+                return res.status(404).send({
                     message: "Data not Found"
                 })
             }
@@ -23,7 +23,8 @@ export default new class userControllers {
                 error: error.message
             })
         }
-        
-    }
-   
+    
 }
+
+}
+

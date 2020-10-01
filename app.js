@@ -1,5 +1,5 @@
 import express from 'express';
-import userRouters from "./server/routers/userRouters";
+import commentRouters from "./server/routers/commentRouters";
 
  require ('./server/config/mongoose')
 const app = express();
@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
 
-app.use(userRouters)
+app.use(commentRouters)
 
 
 
