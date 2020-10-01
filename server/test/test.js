@@ -7,15 +7,15 @@ import index from '../../index';
 
  describe('users', () => {
 
-   // get all users
-    describe('get all users', () => {
+   
+    describe('delete a user', () => {
        
-        it('should get all users',(done) => {
+        it('should delete a user',(done) => {
             chai.request(index)
-            .get('/api/users')
+            .get('/api/users/:id')
             .end((err, res) => {
              res.should.have.status(200);
-             
+             res.body.should.be.a('object')
 
              done();
             })
