@@ -1,7 +1,6 @@
 import express from 'express';
 
-import commentRouters from "./server/routers/commentRouters";
-
+import blogRouters from "./server/routers/blogRouters";
 
 
  require ('./server/config/mongoose')
@@ -11,7 +10,8 @@ app.use(express.json())
 app.use(express.urlencoded({extended:false}))
 
 
-app.use(commentRouters)
+app.use(blogRouters)
+
 
 
 
