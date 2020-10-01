@@ -1,13 +1,12 @@
 import express from 'express';
 import checkAuth from '../middlewares/checkAuth';
 import userControllers from "../controllers/userControllers";
-import checkAuth from "../middlewares/checkAuth";
+
 const userRouters = express.Router();
 
 
 
-
-userRouters.delete('/api/users/:id',checkAuth,userControllers.delete)
+userRouters.get('/api/users', userControllers.getAll);
 
 
 export default userRouters

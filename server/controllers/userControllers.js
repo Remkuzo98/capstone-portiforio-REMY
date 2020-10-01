@@ -4,30 +4,40 @@ import jwt from 'jsonwebtoken';
 export default new class userControllers {
 
 
-    async delete(req, res){
+    async save(req, res){
         try {
-            const user = User.findOne({_id:req.params.id});
-            if(!user){
-                return res.status(404).send({
-                    message:"user not Found"
+            const user = new User(req.body);
+            const savedUser = await user.save();
+            if(savedUser){
+                let token = jwt.sign({
+                    username: savedUser.username,
+                    email: savedUser.email,
+                    userId : savedUser._id
+                }, process.env.jwtKey, { expiresIn: "1h" }
+                );
+                
+                return res.status(200).send({
+                    message:" saved Successifully",
+                    data:savedUser,
+                    token: token
 
-   
                 })
 
             }
+            else
+            {
+                return res.status(404).send({
 
-            await user.remove();
-            return res.status(200).send({
-                message:"User removed "
-            })
+                    error:"Data Not Saved!!"
 
+                })
+            }
         } catch (error) {
             return res.status(500).send({
                 error:error.message
+
             })
         }
-    
-
     }
 
    
