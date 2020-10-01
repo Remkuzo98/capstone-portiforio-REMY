@@ -6,6 +6,7 @@ import index from '../../index';
 
  describe('users', () => {
    
+
     describe('Get a user by Id', () => {
        
         it('should get a user by Id',(done) => {
@@ -17,6 +18,7 @@ import index from '../../index';
              res.body.should.have.property('username');
              res.body.should.have.property('email');
              res.body.should.have.property('password');
+
              done();
             })
          
@@ -25,5 +27,4 @@ import index from '../../index';
     })
 
 
- })
 

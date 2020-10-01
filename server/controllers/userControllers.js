@@ -1,6 +1,7 @@
 import User from '../models/user'
 export default new class userControllers {
 
+
     async getbyId(req, res){
         try {
             const user = await User.findOne({_id:req.params.id});
@@ -20,6 +21,7 @@ export default new class userControllers {
         } catch (error) {
             return res.status(500).send({
                 error:error.message
+
             })
         }
     }
