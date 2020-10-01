@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/4fe625103c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../styles/create.css">
+    <title>Create blog</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            
+            <div class="imgLogo">
+                <a href="../../index.html"><img class="logo" src="../Assets/Images/logo1.png" alt="logo"></a>  
+        
+            </div>
+            
+            <ul class="menu">
+                       
+                <li class="item"><a href="../../index.html">Home</a></li>
+                <li class="item"><a href="#">About</a></li>
+                <li class="item"><a href="contact.html">Contact</a></li>
+                <li class="item"><a href="profile.html">profile</a></li>
+                        
+                        
+            </ul>
+                    
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            
+        </header>
+        <div class="blogContent">
+            <form id="createForm">
+                <h2 class="addTitle">Create Article</h2>
+                <h3 class="alert">Article Created Seccessfully!</h3>
+                <p id="title">Blog title:</p>
+               <input required type="text" id="blogTitle" >
+                <p id="date">Publication date:</p>
+               <input required type="date" id="blogDate" >
+               <p>Write article</p>
+               <textarea id="article" required class="message" ></textarea>
+               <div>
+               <label for="myfile">Select a file:</label>
+               <input type="file" id="myfile" name="myfile">
+               </div>
+               <button type="submit" class="button">Create</button>
+           </form>
+       </div>
+       <footer>
+        <div class="copyrights">
+            <p>copyright &copy; 2020 All rights reserved</p>
+        </div>
+        <div class="footerLogo">
+         <img id="footerImage" src="../Assets/Images/logo1.png" alt="logo">
+        </div>
+        <div class="social">
+            <p>Rwanda Follow us : 
+                <span><i class="fab fa-facebook-f"></i></span>
+                <span><i class="fab fa-twitter"></i></span>
+
+            </p>
+        </div>
+
+     </footer>
+    </div>
+</body>
+</html>
