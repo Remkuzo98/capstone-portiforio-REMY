@@ -1,0 +1,1 @@
+[![Build Status](https://travis-ci.org/Remkuzo98/capstone-portiforio-REMY.svg?branch=ft-deleteBlog)](https://travis-ci.org/Remkuzo98/capstone-portiforio-REMY)
